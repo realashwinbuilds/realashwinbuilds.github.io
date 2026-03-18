@@ -1,0 +1,283 @@
+        .poppins-thin {
+  font-family: "Poppins", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+body{overflow-x: hidden;}
+
+        /* Waving motion animation for the image */
+        @keyframes wavingMotion {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-20deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+
+        .center {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 65vh; /* Make it take full viewport height */
+    text-align: center;
+}
+
+
+
+        .center-text{
+            font-size: 9rem;
+            line-height:1;
+            letter-spacing: -4px; 
+                       
+            text-align: center;
+        }
+
+
+        .whtaspp-me-btn {
+    background: black;
+    color: white;
+    border-radius: 1em;
+    padding: 7px 20px;
+    letter-spacing: 0.5px;
+    border: 0;
+    margin-top: -1em;}
+
+        .center h5 {font-size: 24px;
+    line-height: 35px;
+    font-weight: 400;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+    opacity: 0.6;
+}
+        /* Positioning and waving motion for the image */
+        .waving-image {
+            position: absolute;
+            margin-top: -1.5em;
+            width: 75px; /* Adjust the image size */
+            height: 75px;
+            animation: wavingMotion 3s ease-in-out infinite;
+        }
+        @keyframes slides {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+
+}
+
+.logos:before, .logos:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0), rgb(235, 235, 235));
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgb(235, 235, 235));
+}
+
+.logo_items {
+  display: inline-block;
+  animation: 100s slides infinite linear;
+}
+
+.logos:hover .logo_items {
+  animation-play-state: paused;
+}
+
+.logo_items img{
+ 
+  height: 90px;
+    padding: 20px;
+}
+.row {margin: 0;}
+small {font-size:0.8rem;letter-spacing:0.5px}
+h5{letter-spacing:1px}
+
+
+
+.marquee {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 200px;
+  overflow-x: hidden;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.nav-pad {margin: 40px 20px;}
+.mobile-only{display: none;}
+.desktop-only {display: block;}
+.bold-statement {    font-size: calc(1rem + 4vw);
+    line-height: calc(1rem + 4vw);letter-spacing:-0.5px}
+    .bold-statement-padding{padding: 10em 5em;}
+    .footer-bold-statement-padding{padding: 10em 5em 2em;}
+
+
+@media only screen and (max-width: 767px) {
+    .px-5 {padding-left: 1rem !important;
+    padding-right: 1rem  !important}
+    .g-5, .gx-5 {--bs-gutter-x:0rem !important}
+    .center-text {font-size: 2.5rem;letter-spacing: -2px;}
+    .center h5 {
+        font-size: 14px;
+        line-height: 21px;}
+        .nav-pad {margin: 40px 00px;}
+        .waving-image {width: 65px;height: 65px;}
+            .mobile-only{background: #ccc;display: block;}
+            .desktop-only {display: none;}
+            .center {    height: 25vh;}
+            .logo_items img {
+                height: 65px;
+                padding: 15px;
+            }
+            .bold-statement {    font-size: calc(1rem + 3vw);
+                line-height: calc(1rem + 5.5vw);letter-spacing:-0.5px}
+            .logos:before, .logos:after{width: 100px;}
+            .bold-statement-padding{padding: 6em 1em;}
+            .footer-bold-statement-padding{padding: 6em 1em;}
+            .clients .col-md-4 {    margin-right: .5rem !important;
+                margin-left: .5rem !important;}
+                .marquee .pt-5{padding-top: 1rem !important;}
+                .marquee {    height: 100px;}
+}
+

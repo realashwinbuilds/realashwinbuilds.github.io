@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwin - Your growth partner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="neon_14.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+        .text-container {
+            opacity: 0;
+            transform-origin: center;
+            overflow: h idden;
+            will-change: transform, opacity;
+            perspective: 1000px;
+            mar gin: 150px 0;
+        
+        }
+        
+     .text-container span {
+            display: inline-block;
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        .text-container .image-wrapper {
+            display: inline-flex; /* Ensures the image stays inline */
+            align-items: center;
+        }
+
+        .text-container img {
+            display: inline-block;
+            width: 1em;
+            height: auto;
+            vertical-align: middle;
+            transform-origin: center;
+            will-change: transform;
+        }
+        
+.testimonial {border:1px solid #e2e2e2;background-color: white;border-radius: 1em;padding:3em 2.5em;line-height: 1.8;}
+.footer-neon {width: 1em;margin-top: -20px;}
+.bottom-bar .desktop-only {display:flex}
+.arrow{width: 17px;right: 8% !important;top: 40% !important;}
+.work .ps-0 {    padding-left: calc(var(--bs-gutter-x)* .5) !important;}
+.bt{border-top: 1px solid;}
+a{text-decoration:none}
+
+
+
+
+.branding {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    padding: 5px 12px;
+    font-size: small;
+    border-radius: 10px;
+    font-weight: 500;
+    z-index: 99;
+    border: 1px solid #d2d2d2;
+    letter-spacing: 0.1px;
+    color: #1b1b1b;
+    overflow: hidden;
+    display: flex;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+}
+
+/* Shine effect in background */
+.branding::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    transition: left 0.6s ease-in-out;
+}
+
+.branding:hover::before {
+    left: 100%;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+    .bt{border-top: 0px solid;}
+    .work .h5, h5 {
+    font-size: 1.1rem;
+}
+    .work .row:first-child {padding-left:0px !important}
+     .recent .row:first-child {padding-left:0px !important}
+  
+    .p-l-m-0 {padding-left:0rem !important}
+    .work .ps-0 {    padding-left: 0 !important;}
+    .arrow{width: 12px;right: 4% !important;top: 30% !important;}
+    .bottom-bar .desktop-only {display:none}
+    .footer-neon {width: 1em;margin-top: -6px;}
+    .testimonial {border-radius: 0.5em;padding:2em;line-height: 1.8;font-size: 13px;}
+    .whtaspp-me-btn{font-size: 13px;
+    border-radius: 0.5em;
+    padding: 5px 20px;}
+    .px-5 {padding-left: 1rem !important;
+    padding-right: 1rem  !important}
+    .g-5, .gx-5 {--bs-gutter-x:0rem !important}
+    .pt-5 {padding-top: 1rem !important;}
+    .center-text {font-size: 2.5rem;letter-spacing: -1px;}
+    .center h5 {
+        font-size: 14px;
+        line-height: 21px;}
+        .nav-pad {margin: 40px 00px;}
+        .waving-image {width: 55px;height: 55px;margin-top:-1.8em}
+            .mobile-only{background: #ccc;display: block;}
+            .desktop-only {display: none;}
+            .center {    height: 30vh;}
+            .logo_items img {
+                height: 55px;
+                padding: 10px;
+            }
+            .bold-statement {    font-size: calc(1rem + 3vw);
+                line-height: calc(1rem + 5.5vw);letter-spacing:-0.5px}
+            .logos:before, .logos:after{width: 100px;}
+            .bold-statement-padding{padding: 6em 1em;}
+            .footer-bold-statement-padding{padding: 6em 1em;}
+            .clients .col-md-4 {    margin-right: .5rem !important;
+                margin-left: .5rem !important;}
+                .marquee .pt-5{padding-top: 1rem !important;}
+                .marquee {    height: 65px;font-size:1em}
+                .h6, h6 {font-size:0.8rem !important}
+                .wp-btn-mg{margin-top:-1em}
+                small {font-size: 0.62rem;}
+                .footer-bold-statement-padding .center {display:block}
+                .recent .col-md-4 {padding-left:0px;padding-right:0px}
+                
+}
+
+</style>
+</head>
+<body style="background-color: #ebebeb" class="poppins-regular">
+    <!-- Waving motion image in the top left corner -->
+
+    <div class="row py-2 text-center mobile-only" style="font-size: 10px;font-weight: 600;"><p style="opacity: 0.8;margin-bottom: 0;">Hey there! I'm Ashwin, Your Friendly Digital Growth Partner! 🔥</p></div>
+
+    <div class="row nav-pad">
+      <div class="col-md-3"><a link href="https://thisisashwin.in/"><img src="ashwin.png" alt="Waving Hand Image" class="waving-image"></a></div>
+      <div class="col-md-6 text-center"><p style="opacity: 0.8;" class="desktop-only">Hey there! I'm Ashwin, Your Friendly Digital Growth Partner! 🔥</p>      </div>
+      <div class="col-md-3 text-end wp-btn-mg"><a href="https://wa.me/918879122801" target="_blank"><button class="whtaspp-me-btn">Whatsapp</button></a></div>
+    </div>
+    
+    
+    
+    <!-- Centered Text -->
+     <div class="container center"> 
+        <div class="center-text poppins-medium text-container">
+          Tech-Driven <br/>Gr<span class="image-wrapper"><img src="neon_14.png" style="width:0.8em"></span>wth Partner
+        </div>
+       <h5>Maximizing impact with<br/>streamlined technology strategies.</h5>
+       
+    </div>
+   
+
+    <div class="logos">
+      <div class="logo_items">
+        <img src="cpanel.png">
+      <img src="figma.png">
+      <img src="razorpay.png">
+      <img src="shiprocket.png">  
+      <img src="shopify.png">
+      <img src="wordpress.png">
+      <img src="godaddy.png">
+      <img src="hostinger.png">
+      <img src="mailchimp.png">
+      <img src="zoho.png">
+      <img src="wix.png">      
+      <img src="wati.png">          
+      </div>
+
+      <div class="logo_items">
+        <img src="cpanel.png">
+      <img src="figma.png">
+      <img src="razorpay.png">
+      <img src="shiprocket.png">  
+      <img src="shopify.png">
+      <img src="wordpress.png">
+      <img src="godaddy.png">
+      <img src="hostinger.png">
+      <img src="mailchimp.png">
+      <img src="zoho.png">
+      <img src="wix.png">      
+      <img src="wati.png">          
+      </div>
+
+
+      <div class="logo_items">
+        <img src="cpanel.png">
+      <img src="figma.png">
+      <img src="razorpay.png">
+      <img src="shiprocket.png">  
+      <img src="shopify.png">
+      <img src="wordpress.png">
+      <img src="godaddy.png">
+      <img src="hostinger.png">
+      <img src="mailchimp.png">
+      <img src="zoho.png">
+      <img src="wix.png">      
+      <img src="wati.png">          
+      </div>
+
+    
+      </div>
+    
+    
+    
+
+
+      
+        <div class="row px-5 pt-5 mt-2 recent">
+         <div class="row"> <h6 class="ps-0">My Recent Assignments</h6>
+        </div><br/>
+          <div class="col-md-12 mb-5 px-0">
+              <a href="https://www.rochonline.in/" target="_blank">
+              <!-- Desktop image -->
+              <img src="master-desk-port.png" class="img-fluid d-none d-sm-block">
+              <!-- Mobile image -->
+              <img src="master-mob-port.png" class="img-fluid d-block d-sm-none">
+            
+            <br/><h6 class="mb-0">Masterchef India - Telugu Rohit Chidurala</h6></a>
+           <small>Buit website for masterchef who makes worldclass cakes</small>
+          </div>
+          
+          <div class="col-md-4 mb-5">
+            <a link href="https://www.sleeplove.co/" target="_blank"><img src="sleeplove-4.png" class="img-fluid" style="border-radius:1em">
+            <br/><br/><h6 class="mb-0">Sleeplove</h6></a>
+           <small>Managing a brand store that grew 5X in just 6 months.</small>
+          </div>
+            
+          <div class="col-md-4 mb-5">
+            <a link href="https://travorbis.com/" target="_blank"><img src="travorbis-1.png" class="img-fluid" style="border-radius:1em">
+            <br/><br/><h6 class="mb-0">Travorbis (Work In Progress)</h6></a>
+           <small>A trekking startup built by one of India’s top trekkers.</small>
+            </div>
+          <div class="col-md-4">
+              <a link href="https://decorbysanjh.com/" target="_blank"><img src="sanjh-1.png" class="img-fluid" style="border-radius:1em">
+            <br/><br/><h6 class="mb-0">Decor by Sanjh</h6></a>
+            <small> Founded by an IIMA Alumnus</small></div>
+
+        </div>
+      
+
+ 
+         
+            <div class="row mt-5 px-5 gx-5">
+               
+                 <div class="col-md-8 offset-md-2">
+                      <!-- Desktop image --> <h6 style="line-height:1.8;text-align:center">I have had the opportunity to work closely with founders from esteemed institutions such as IIT, IIM, and ISB. These collaborations reflect my commitment to delivering high-quality, reliable digital solutions that align with the vision and standards of top-tier professionals.</h6> <br/><br/>
+              <img src="insti.png" class="img-fluid d-none d-sm-block">
+              <!-- Mobile image -->
+              <img src="insti-mob.png" class="img-fluid d-block d-sm-none">
+                 </div>
+             </div>
+    
+
+
+      <div class="row text-center bold-statement-padding" >
+        <div class="row">
+
+          <h1 class="bold-statement">I help businesses to innovate <img src="neon_1.png" style="width:0.6em;margin-top:-4px;">nd remain highly relevent to their cust<img src="neon_14.png" style="width:0.8em">mers by developing edge digital solutions</h1>
+        </div>
+
+      </div>
+
+
+
+
+      
+    <!-----------------Website List------------------->
+
+      <div class="row mb-0  px-5 gx-5 work">
+
+        <div class="row mb-5"> <h6 class="ps-0">Damn! I did this?</h6> <small class="ps-0"> Attaching few clients</small></div>
+
+
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4" style="border-top: 1px solid;border-bottom: 1px solid;">
+          <h5 class="mb-2">Lifelong</h5> <small> I contributed by building the **Product Detail Page**, <br/>a key element in converting visitors into sales.</small>
+          <a href="https://www.lifelongindiaonline.com/collections/best-sellers/products/foot-and-leg-massager-with-kneading" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4 bt" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Good Times & Co.</h5> <small> Designed & developed a digital platform of a renowned event studio with a sleek, modern interface.</small>
+          <a href="https://goodtimesandco.in/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+     
+          
+
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4 bt" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Vhaan</h5> <small> Created a stunning online store for a social startup, now India’s leading ethnic footwear brand.</small>
+          <a href="https://vhaan.in/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+        </div>
+
+
+            <!------------------------------------Website List------------------->
+
+      <div class="row mb-0  px-5 gx-5 ">
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Wauly</h5> <small> High-converting landing pages and <br/>engaging newsletters to boost sales and engagement.</small>
+          <a href="https://wauly.com/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Akreations Luxury Salon</h5> <small> A top luxury salon in Bandra & Powai,<br/> known for premium grooming services.</small>
+          <a href="https://www.akreations.in/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+     
+          
+
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Euroclean</h5> <small> A leading collaboration of Seitz, Germany &<br/>Renzacci, Italy, offering world-class dry cleaning solutions.</small>
+          <a href="https://eurocleanmumbai.in/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+        </div>
+
+        
+            <!------------------------------------Website List------------------->
+
+      <div class="row mb-5  px-5 gx-5 ">
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Beyond greens</h5> <small> A distinguished member of the Parekh Group.<br/> A Key player in fruit and vegetable trading.</small>
+          <a href="https://beyondgreens.co.in/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Techminds</h5> <small> A Singapore-based firm, empowering businesses with<br/>secure blockchain and  payment gateway solutions.</small>
+          <a href="https://techminds.io/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+     
+          
+
+        <div class="col-md-4 position-relative">
+          <div class="row  py-4" style="border-bottom: 1px solid;">
+          <h5 class="mb-2">Spicestory</h5> <small> A Shark Tank brand, enhancing the homepage to better engage and communicate with visitors.</small>
+          <a href="https://spicestoryworld.com/" target="_blank">
+            <img src="reshot-icon-arrow-up-26SV9QGPE5.svg" class="position-absolute top-50 end-10 arrow" alt="" >
+          </a>
+          </div>
+        </div>
+
+        </div>
+
+
+        
+        <div class="marquee mt-5 pt-5">
+          <div class="track pt-5">
+            <div class="content">&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_13.png" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;7+ Years Experience
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_14.png" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 300;">54 Brands</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_19.png" width="20px">&nbsp;&nbsp;&nbsp;&nbsp;UI-UX Mastery
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_3.png" width="20px">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 300;">Shopify Specialist</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_6.png" width="20px">&nbsp;&nbsp;&nbsp;&nbsp;Client-Focused Solutions
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_13.png" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 300;">High-Impact Results</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_14.png" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;Tailored Digital Solutions
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_19.png" width="20px">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 300;">Ecommerce Expertise</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_3.png" width="20px">&nbsp;&nbsp;&nbsp;&nbsp;Rebranding Experience
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_6.png" width="20px">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 300;">Responsive Support</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_13.png" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;100+ Assignments
+              &nbsp;&nbsp;&nbsp;&nbsp;<img src="neon_14.png" width="25px">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 300;">Proven Client Growth</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <br/><br/>
+
+      <!---------------------------------------------Testimonisla----------------------->
+
+
+        <div class="row" style="padding: 0em 0em;"></div>
+
+        <div class="row px-5 pt-5 mt-2 recent-2">
+          <div class="row mb-5 ps-0"> <h6>This Reaction? Priceless! <img src="star2.png" style="width: 65px;margin-top: -3px;margin-left: 5px;"> </h6> <small>Testimonials, Turning visions into reality</small></div>
+         <br><br><br>
+           <div class="col-md-4 mb-5 px-0">
+             <div class="testimonial">He truly understands ecommerce! Optimized our Shopify  seamlessly, improving performance. Reliable and highly recommended!
+              <br><h6 class="mb-0 mt-4">Sruthi Reddy</h6>
+            <small>Founder, Sleeplove - Hyderabad</small>
+             </div>
+             
+           </div>
+
+           <div class="col-md-4 mb-5 px-0">
+            <div class="testimonial">Absolutely loved the work! The website runs smoothly, looks great, and was delivered hassle-free. Super reliable and easy to work with!
+             <br><h6 class="mb-0 mt-4">Swapnil Khot</h6>
+           <small>Co-founder, Travorbis - Mumbai</small>
+            </div>
+            
+          </div>
+
+          <div class="col-md-4 mb-5 px-0">
+            <div class="testimonial">Always available and super responsive! The work was seamless, and any changes were handled quickly. A great experience overall!
+             <br><h6 class="mb-0 mt-4">Shshank Jain</h6>
+           <small>Founder, Decor by Sanjh - Gurgaon</small>
+            </div>
+            
+          </div>
+             
+
+         </div>
+
+
+
+         <!--div class="row px-5 pt-5 mt-2 text-center">
+          <div class="row mb-5"> <h6 style="text-align: left;">Favorite Reads</h5></div>
+            <div class="col"><img src="shoe.png" alt="" class="img-fluid" style="border-radius: 1em;"></div>
+            <div class="col"><img src="win.png" alt="" class="img-fluid" style="border-radius: 1em;"></div>
+            <div class="col"><img src="steve.png" alt="" class="img-fluid" style="border-radius: 1em;"></div>
+            <div class="col"><img src="dekho.png" alt="" class="img-fluid" style="border-radius: 1em;"></div>
+            <div class="col"><img src="zero.png" alt="" class="img-fluid" style="border-radius: 1em;"></div>
+            <div class="col"><img src="shala.png" alt="" class="img-fluid" style="border-radius: 1em;"></div>
+            
+            <br><br><br>
+         </div-->
+
+
+
+
+
+
+        
+        
+         <div class="row text-center footer-bold-statement-padding" >
+          <div class="row center">
+  
+            <h1 class="center-text text-container">Let's Create <br/>S<span class="image-wrapper"><img src="neon_13.png" class="footer-neon"></span>mething Great</h1>
+            <h5>Maximizing impact with<br/>streamlined technology strategies.</h5>
+            <div class="container">
+            <a href="https://wa.me/918879122801" target="_blank"><button class="btn btn-lg mt-4 py-2 px-5" style="background: black;width: auto;color:white;border-radius: 1em;">👋 Say Hello</button></a>
+            </div>
+
+          </div>
+        </div>
+
+
+            <div class="bottom-bar">
+         <div class="row desktop-only" style="margin: 40px 20px;">
+          <div class="col-md-3"><a link href="https://thisisashwin.in/"><img src="ashwin.png" alt="Waving Hand Image" class="waving-image"></a></div>
+          <div class="col-md-6 text-center"><p style="opacity: 0.8;">&copy; All Righs Resevred</p>      </div>
+          <div class="col-md-3 text-end"><a link href="https://www.instagram.com/thisisashwin/" target="_blank"><img src="instagram.png" style="width: 22px;"></a></div>
+        </div>
+        </div>
+        
+        <div class="row mobile-only" style="padding:1em">
+                        <div class="mobile-only text-center "><small style="opacity: 0.8;">&copy; All Righs Resevred</small>      </div>
+
+        </div>
+
+
+<a link href="/login" target="_blank" class="branding"><img src="https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon-d2.89e12c322e.svg" style="margin-right:2px"> Admin Login</a>
+
+
+</body>
+
+<script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('.text-container').forEach((text) => {
+            let splitText = new SplitType(text, { type: "chars, words" });
+
+            gsap.from([...splitText.chars, ...text.querySelectorAll(".image-wrapper img")], {
+                y: 30,
+                opacity: 0,
+                rotationX: -90,
+                skewX: 10,
+                stagger: 0.05,
+                duration: 1.5,
+                ease: "expo.out",
+                scrollTrigger: {
+                    trigger: text,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+
+            gsap.to(text, { opacity: 1, duration: 0.5 });
+        });
+    </script>
+</html>
